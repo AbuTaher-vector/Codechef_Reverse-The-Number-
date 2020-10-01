@@ -1,30 +1,24 @@
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+int reverse(int num)
+{
+  int rev_num = 0; 
+    while(num > 0) 
+    { 
+      rev_num = rev_num*10 + num%10; 
+      num = num/10; 
+    } 
+    return rev_num;   
+}
+
+
 int main()
 {
-    int tt;
-    cin>>tt;
-    while(tt--)
-    {
-        string s;
-        cin>>s;
-        int flag=0;
-
-
-        for(int i=s.size()-1;i>=0;i--)
-        {
-           if(s[i]-'0'!=0)
-           {
-               cout<<s[i];
-               flag=1;
-           }
-          else if(s[i]-'0'==0 && flag!=0)
-           {
-               cout<<s[i];
-           }
-
-        }
-        cout<<endl;
-    }
+  int n;
+  cin>>n;
+  cout<<reverse(n);
+  
+  
+  return 0;
 }
